@@ -95,4 +95,4 @@ jobs:
          BUILD_SPHINX_PDF = NO \
          GhcLibHcOpts += -fPIC -keep-s-file \
          GhcRtsHcOpts += -fPIC" > mk/build.mk
-         nix-shell --pure ghc.nix --arg withLlvm true --arg withDwarf false --arg crossTargetArch \"aarch64-unknown-linux-gnu\" --arg nixCrossTools \"aarch64-unknown-linux-gnu\" --arg version \"9.1\" --command "make -j"
+         nix-shell --pure ghc.nix --arg withLlvm true --arg withDwarf false --arg crossTargetArch \"aarch64-unknown-linux-gnu\" --arg nixCrossTools \"aarch64-multiplatform\" --arg version \"9.1\" --command "make -j"
