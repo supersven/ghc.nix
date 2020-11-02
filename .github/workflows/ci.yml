@@ -81,7 +81,7 @@ jobs:
           signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
 
       - name: Run nix-shell - Boot and Configure
-        run: nix-shell --pure ghc.nix --arg withLlvm true --arg withDwarf false --arg crossTargetArch \"aarch64-unknown-linux-gnu\" --arg nixCrossTools \"aarch64-unknown-linux-gnu\" --command "./boot && configure_ghc"
+        run: nix-shell --pure ghc.nix --arg withLlvm true --arg withDwarf false --arg crossTargetArch \"aarch64-unknown-linux-gnu\" --arg nixCrossTools \"aarch64-multiplatform\" --command "./boot && configure_ghc"
 
       - name: Run nix-shell - Make
         run: |
