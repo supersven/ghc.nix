@@ -83,7 +83,7 @@ jobs:
       - name: Create shell.nix with all options
         uses: DamianReeves/write-file-action@v1.0
         with:
-          path: ${{ GITHUB_WORKSPACE }}/shell.nix
+          path: ${{ env.GITHUB_WORKSPACE }}/shell.nix
           contents: |
             import ghc.nix/default.nix {
               withDocs = true;
