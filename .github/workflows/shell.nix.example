@@ -1,0 +1,5 @@
+  import ghc.nix/default.nix {
+    withHadrianDeps = true;
+    withLlvm = true;
+    withIde = true;
+}
