@@ -81,17 +81,7 @@ jobs:
           signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
       
       - name: Create shell.nix with all options
-        uses: DamianReeves/write-file-action@v1.0
-        with:
-          path: ${{ env.GITHUB_WORKSPACE }}/shell.nix
-          contents: |
-            import ghc.nix/default.nix {
-              withDocs = true;
-              withHadrianDeps = true;
-              withLlvm = true;
-              withIde = true;
-            }
-          write-mode: overwrite
+        run: cp ./github/workflows/shell.nix.example shell.nix
   
       - name: Run nix-shell - Boot and Configure
         run: nix-shell --pure --command "./boot && configure_ghc"
