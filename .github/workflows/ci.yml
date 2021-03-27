@@ -81,7 +81,7 @@ jobs:
           signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
       
       - name: Create shell.nix with all options
-        run: cp ./github/workflows/shell.nix.example shell.nix
+        run: cp ghc.nix/.github/workflows/shell.nix.example shell.nix
   
       - name: Run nix-shell - Boot and Configure
         run: nix-shell --pure --command "./boot && configure_ghc"
